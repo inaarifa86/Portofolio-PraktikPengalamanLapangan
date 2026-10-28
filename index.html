@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio PPG Calon Guru IPS 2026 - Ina Arifa</title>
+    <style>
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+        }
+
+        body {
+            background-color: #f5ede4; /* coklat muda elegan */
+            color: #3e2e1f;
+            line-height: 1.7;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== BERANDA (HERO) ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            background-image: url('https://uny.ac.id/sites/default/files/2024-02/Kumbara%20Rektorat%20UNY_0.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            isolation: isolate;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(62, 46, 31, 0.65); /* overlay coklat gelap transparan */
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 40px 24px;
+            animation: fadeUp 1s ease-out;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-content h2 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #f5ede4;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            color: #fdf8f3;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+            line-height: 1.8;
+        }
+
+        .btn-hero {
+            display: inline-block;
+            background-color: #c9a87c;
+            color: #2d1f13;
+            padding: 16px 42px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+
+        .btn-hero:hover {
+            background-color: #dfc09f;
+            transform: translateY(-3px);
+        }
+
+        /* ===== SECTION UMUM ===== */
+        section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #4d3a28;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 4px;
+            background-color: #b89a74;
+            margin-top: 12px;
+            border-radius: 4px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #6b5a48;
+            margin-bottom: 40px;
+            max-width: 800px;
+        }
+
+        /* ===== TENTANG PPL ===== */
+        .about-ppl {
+            background-color: #f5ede4;
+        }
+
+        .about-card {
+            background: #fffcf8;
+            border-radius: 24px;
+            padding: 40px 36px;
+            box-shadow: 0 10px 30px rgba(100, 70, 40, 0.08);
+            border-left: 8px solid #c9a87c;
+            margin-top: 20px;
+        }
+
+        .about-card p {
+            font-size: 1.1rem;
+            color: #3e2e1f;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .about-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            background-color: #f1e3d3;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+            color: #4d3a28;
+        }
+
+        /* ===== INFORMASI PPL ===== */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 28px;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            background: #fffcf8;
+            padding: 28px 24px;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(100, 70, 40, 0.06);
+            transition: transform 0.25s, box-shadow 0.25s;
+            border: 1px solid #e8d9c8;
+        }
+
+        .info-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 30px rgba(100, 70, 40, 0.12);
+        }
+
+        .info-item .label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #a07d58;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .info-item .value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #3e2e1f;
+        }
+
+        .info-item .value small {
+            font-weight: 400;
+            font-size: 1rem;
+            color: #6b5a48;
+        }
+
+        /* ===== NARASI LENGKAP ===== */
+        .narrative {
+            background-color: #efe4d8;
+            border-radius: 32px;
+            padding: 48px 40px;
+            margin-top: 40px;
+        }
+
+        .narrative p {
+            font-size: 1.1rem;
+            color: #3e2e1f;
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+
+        .narrative p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #3e2e1f;
+            color: #d9c9b8;
+            text-align: center;
+            padding: 36px 24px;
+            font-size: 0.95rem;
+        }
+
+        footer strong {
+            color: #f5ede4;
+        }
+
+        /* ===== ANIMASI ===== */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.1rem;
+            }
+            .hero-content h2 {
+                font-size: 1.2rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.7rem;
+            }
+            .about-card {
+                padding: 28px 22px;
+            }
+            .narrative {
+                padding: 32px 24px;
+            }
+            section {
+                padding: 50px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.7rem;
+            }
+            .btn-hero {
+                padding: 14px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== BERANDA ===== -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Ina Arifa</h1>
+            <h2>Pendidikan Profesi Guru Calon Guru Ilmu Pengetahuan Sosial 2026</h2>
+            <p>
+                Praktik Pengalaman Lapangan (PPL) – Mandiri di SMP Negeri 15 Yogyakarta.
+                Program Studi Pendidikan IPS, Universitas Negeri Yogyakarta.
+            </p>
+            <a href="#tentang-ppl" class="btn-hero">Jelajahi Portofolio</a>
+        </div>
+    </section>
+
+    <!-- ===== TENTANG PPL ===== -->
+    <section id="tentang-ppl" class="about-ppl">
+        <div class="container">
+            <h2 class="section-title">Praktik Pengalaman Lapangan (PPL) – Mandiri</h2>
+            <p class="section-subtitle">
+                SMP Negeri 15 Yogyakarta · Program Studi Pendidikan IPS · Universitas Negeri Yogyakarta
+            </p>
+
+            <div class="about-card">
+                <p>
+                    Saya <span class="highlight">Ina Arifa</span>, mahasiswa Program Studi Pendidikan IPS 
+                    Universitas Negeri Yogyakarta, sedang melaksanakan <span class="highlight">Praktik Pengalaman 
+                    Lapangan (PPL) – Mandiri</span> di <span class="highlight">SMP Negeri 15 Yogyakarta</span>. 
+                    Kegiatan PPL ini merupakan bagian integral dari Pendidikan Profesi Guru (PPG) Calon Guru 
+                    Ilmu Pengetahuan Sosial tahun 2026 yang saya tempuh.
+                </p>
+                <p>
+                    PPL – Mandiri memberikan kesempatan bagi saya untuk mengaplikasikan teori pedagogik dan 
+                    materi keilmuan IPS secara langsung di ruang kelas, sekaligus mengembangkan kompetensi 
+                    profesional, pedagogik, sosial, dan kepribadian sebagai calon guru. Selama pelaksanaan PPL, 
+                    saya terlibat dalam perencanaan pembelajaran, pelaksanaan kegiatan belajar mengajar, 
+                    asesmen, serta refleksi bersama guru pamong dan dosen pembimbing lapangan.
+                </p>
+            </div>
+
+            <!-- INFO GRID -->
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="label">Nama Lengkap</div>
+                    <div class="value">Ina Arifa</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Program Studi</div>
+                    <div class="value">Pendidikan IPS <small>– UNY</small></div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Lokasi PPL</div>
+                    <div class="value">SMP Negeri 15 Yogyakarta</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Jenis PPL</div>
+                    <div class="value">PPL – Mandiri</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Tahun Portofolio</div>
+                    <div class="value">2026</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Bidang Keahlian</div>
+                    <div class="value">Ilmu Pengetahuan Sosial (IPS)</div>
+                </div>
+            </div>
+
+            <!-- NARASI LENGKAP -->
+            <div class="narrative">
+                <p>
+                    <strong>Latar Belakang dan Tujuan PPL – Mandiri.</strong> Praktik Pengalaman Lapangan (PPL) – 
+                    Mandiri di SMP Negeri 15 Yogyakarta dilaksanakan sebagai wujud nyata dari kompetensi calon 
+                    guru dalam mengintegrasikan pengetahuan teoretis dengan praktik pembelajaran di sekolah. 
+                    Sebagai mahasiswa Pendidikan IPS Universitas Negeri Yogyakarta, saya menyadari bahwa 
+                    pembelajaran IPS memiliki peran strategis dalam membentuk peserta didik menjadi warga negara 
+                    yang kritis, reflektif, dan bertanggung jawab. Melalui PPL ini, saya berupaya menghadirkan 
+                    pembelajaran IPS yang kontekstual, menyenangkan, dan bermakna bagi siswa.
+                </p>
+                <p>
+                    <strong>Pelaksanaan Kegiatan.</strong> Selama PPL – Mandiri, saya melaksanakan serangkaian 
+                    kegiatan mulai dari observasi kelas dan lingkungan sekolah, penyusunan modul ajar, 
+                    pengembangan media pembelajaran berbasis teknologi dan kearifan lokal, hingga pelaksanaan 
+                    pembelajaran di kelas. Saya juga melaksanakan asesmen formatif dan sumatif, serta melakukan 
+                    refleksi harian bersama guru pamong untuk terus memperbaiki kualitas pembelajaran. 
+                    Pendekatan yang saya gunakan menekankan pada pembelajaran aktif, kolaboratif, dan 
+                    berpusat pada peserta didik, sejalan dengan Kurikulum Merdeka yang berlaku.
+                </p>
+                <p>
+                    <strong>Refleksi dan Dampak.</strong> Pengalaman PPL – Mandiri ini memberikan pemahaman 
+                    mendalam bagi saya tentang realitas pendidikan di sekolah, khususnya dalam pembelajaran IPS. 
+                    Saya belajar mengelola kelas, memahami karakteristik peserta didik yang beragam, serta 
+                    mengembangkan strategi pembelajaran yang inklusif. Kolaborasi dengan guru pamong, dosen 
+                    pembimbing, dan rekan mahasiswa PPL menjadi modal berharga untuk terus tumbuh sebagai calon 
+                    guru profesional. Portofolio ini disusun sebagai dokumentasi dan refleksi atas seluruh 
+                    proses PPL – Mandiri yang saya jalani, sekaligus sebagai bagian dari pemenuhan tugas 
+                    Pendidikan Profesi Guru Calon Guru Ilmu Pengetahuan Sosial tahun 2026.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <p><strong>Ina Arifa</strong> · Pendidikan IPS · Universitas Negeri Yogyakarta</p>
+            <p style="margin-top:8px; font-size:0.9rem; opacity:0.8;">
+                Portofolio Pendidikan Profesi Guru Calon Guru Ilmu Pengetahuan Sosial 2026 · 
+                PPL – Mandiri di SMP Negeri 15 Yogyakarta
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
